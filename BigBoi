@@ -26,8 +26,8 @@ or InitiatingProcessCommandLine contains 'b64'
 or InitiatingProcessCommandLine contains '-e'
 or InitiatingProcessCommandLine contains '=='
 or InitiatingProcessCommandLine contains 'psexec'
-or InitiatingProcessCommandLine contains 'msagent'
-or InitiatingProcessCommandLine contains 'postex'
+or InitiatingProcessCommandLine contains 'msagent_'
+or InitiatingProcessCommandLine contains 'postex_'
 or InitiatingProcessCommandLine contains 'ping -n'
 or InitiatingProcessCommandLine contains 'rundll32')
 and (InitiatingProcessParentFileName contains "WINWORD.EXE"
@@ -36,10 +36,7 @@ or InitiatingProcessParentFileName contains "POWERPNT.EXE"
 or InitiatingProcessParentFileName contains "MSPUB.EXE"
 or InitiatingProcessParentFileName contains "VISIO.EXE"
 or InitiatingProcessParentFileName contains "OUTLOOK.EXE"
-or InitiatingProcessParentFileName contains "ACRORD32.EXE"
-or InitiatingProcessParentFileName contains "CMD.EXE"
-or InitiatingProcessParentFileName contains "EXPLORER.EXE"
-or InitiatingProcessParentFileName contains "POWERSHELL.EXE")
+or InitiatingProcessParentFileName contains "ACRORD32.EXE")
 and (InitiatingProcessFileName contains "cmd.exe"
 or InitiatingProcessFileName contains "powershell.exe"
 or InitiatingProcessFileName contains "wscript.exe"
@@ -53,10 +50,10 @@ or InitiatingProcessFileName contains "msiexec.exe"
 or InitiatingProcessFileName contains "forfiles.exe"
 or InitiatingProcessFileName contains "certutil.exe"
 or InitiatingProcessFileName contains "bitsadmin.exe"
-or InitiatingProcessFileName contains "lsass.exe"
 or InitiatingProcessFileName contains "rundll32.exe"
 or InitiatingProcessFileName contains "dsquery.exe"
 or InitiatingProcessFileName contains "installutil.exe"
 or InitiatingProcessFileName contains "psexec.exe"
 or InitiatingProcessFileName contains "dbgsrv.exe"
-or InitiatingProcessFileName contains "msedge.exe")
+or InitiatingProcessFileName contains "msedge.exe"
+or InitiatingProcessFileName contains "psexec.exe")
