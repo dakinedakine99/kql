@@ -1,0 +1,62 @@
+DeviceEvents
+| union Device*
+| where (InitiatingProcessCommandLine contains '-Nop' 
+or InitiatingProcessCommandLine contains '-ep'
+or InitiatingProcessCommandLine contains 'Exec'
+or InitiatingProcessCommandLine contains 'decode'
+or InitiatingProcessCommandLine contains 'vssadmin delete'
+or InitiatingProcessCommandLine contains 'reg SAVE HKLM'
+or InitiatingProcessCommandLine contains '-ma'
+or InitiatingProcessCommandLine contains 'CurrentVersion'
+or InitiatingProcessCommandLine contains '.downloadstring('
+or InitiatingProcessCommandLine contains '.downloadfile('
+or InitiatingProcessCommandLine contains 'ticket:'
+or InitiatingProcessCommandLine contains 'sekurlsa'
+or InitiatingProcessCommandLine contains 'iex'
+or InitiatingProcessCommandLine contains 'iwr'
+or InitiatingProcessCommandLine contains 'schtasks* /create *AppData'
+or InitiatingProcessCommandLine contains 'net use'
+or InitiatingProcessCommandLine contains 'net accounts'
+or InitiatingProcessCommandLine contains 'whoami'
+or InitiatingProcessCommandLine contains '/c'
+or InitiatingProcessCommandLine contains 'Invoke'
+or InitiatingProcessCommandLine contains 'New-Object'
+or InitiatingProcessCommandLine contains 'base64'
+or InitiatingProcessCommandLine contains 'b64'
+or InitiatingProcessCommandLine contains '-e'
+or InitiatingProcessCommandLine contains '=='
+or InitiatingProcessCommandLine contains 'psexec'
+or InitiatingProcessCommandLine contains 'msagent'
+or InitiatingProcessCommandLine contains 'postex'
+or InitiatingProcessCommandLine contains 'ping -n'
+or InitiatingProcessCommandLine contains 'rundll32')
+and (InitiatingProcessParentFileName contains "WINWORD.EXE"
+or InitiatingProcessParentFileName contains "EXCEL.EXE"
+or InitiatingProcessParentFileName contains "POWERPNT.EXE"
+or InitiatingProcessParentFileName contains "MSPUB.EXE"
+or InitiatingProcessParentFileName contains "VISIO.EXE"
+or InitiatingProcessParentFileName contains "OUTLOOK.EXE"
+or InitiatingProcessParentFileName contains "ACRORD32.EXE"
+or InitiatingProcessParentFileName contains "CMD.EXE"
+or InitiatingProcessParentFileName contains "EXPLORER.EXE"
+or InitiatingProcessParentFileName contains "POWERSHELL.EXE")
+and (InitiatingProcessFileName contains "cmd.exe"
+or InitiatingProcessFileName contains "powershell.exe"
+or InitiatingProcessFileName contains "wscript.exe"
+or InitiatingProcessFileName contains "cscript.exe"
+or InitiatingProcessFileName contains "schtasks.exe"
+or InitiatingProcessFileName contains "regsvr32.exe"
+or InitiatingProcessFileName contains "hh.exe"
+or InitiatingProcessFileName contains "wmic.exe"
+or InitiatingProcessFileName contains "mshta.exe"
+or InitiatingProcessFileName contains "msiexec.exe"
+or InitiatingProcessFileName contains "forfiles.exe"
+or InitiatingProcessFileName contains "certutil.exe"
+or InitiatingProcessFileName contains "bitsadmin.exe"
+or InitiatingProcessFileName contains "lsass.exe"
+or InitiatingProcessFileName contains "rundll32.exe"
+or InitiatingProcessFileName contains "dsquery.exe"
+or InitiatingProcessFileName contains "installutil.exe"
+or InitiatingProcessFileName contains "psexec.exe"
+or InitiatingProcessFileName contains "dbgsrv.exe"
+or InitiatingProcessFileName contains "msedge.exe")
