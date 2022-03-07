@@ -55,4 +55,5 @@ or InitiatingProcessFileName contains "installutil.exe"
 or InitiatingProcessFileName contains "psexec.exe"
 or InitiatingProcessFileName contains "dbgsrv.exe"
 or InitiatingProcessFileName contains "msedge.exe"
-)
+| project Timestamp, DeviceName, InitiatingProcessParentFileName,
+ InitiatingProcessFileName, InitiatingProcessCommandLine)
