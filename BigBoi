@@ -17,7 +17,6 @@ or InitiatingProcessCommandLine contains 'iwr'
 or InitiatingProcessCommandLine contains 'schtasks* /create *AppData'
 or InitiatingProcessCommandLine contains 'net use'
 or InitiatingProcessCommandLine contains 'net accounts'
-or InitiatingProcessCommandLine contains 'whoami'
 or InitiatingProcessCommandLine contains '/c'
 or InitiatingProcessCommandLine contains 'Invoke'
 or InitiatingProcessCommandLine contains 'New-Object'
@@ -30,13 +29,13 @@ or InitiatingProcessCommandLine contains 'msagent_'
 or InitiatingProcessCommandLine contains 'postex_'
 or InitiatingProcessCommandLine contains 'ping -n'
 or InitiatingProcessCommandLine contains 'rundll32')
-and (InitiatingProcessParentFileName contains "WINWORD.EXE"
-or InitiatingProcessParentFileName contains "EXCEL.EXE"
-or InitiatingProcessParentFileName contains "POWERPNT.EXE"
-or InitiatingProcessParentFileName contains "MSPUB.EXE"
-or InitiatingProcessParentFileName contains "VISIO.EXE"
-or InitiatingProcessParentFileName contains "OUTLOOK.EXE"
-or InitiatingProcessParentFileName contains "ACRORD32.EXE")
+and (InitiatingProcessParentFileName contains "winword.exe"
+or InitiatingProcessParentFileName contains "excel.exe"
+or InitiatingProcessParentFileName contains "powerpnt.exe"
+or InitiatingProcessParentFileName contains "mspub.exe"
+or InitiatingProcessParentFileName contains "visio.exe"
+or InitiatingProcessParentFileName contains "outlook.exe"
+or InitiatingProcessParentFileName contains "acrord32.exe")
 and (InitiatingProcessFileName contains "cmd.exe"
 or InitiatingProcessFileName contains "powershell.exe"
 or InitiatingProcessFileName contains "wscript.exe"
@@ -56,4 +55,4 @@ or InitiatingProcessFileName contains "installutil.exe"
 or InitiatingProcessFileName contains "psexec.exe"
 or InitiatingProcessFileName contains "dbgsrv.exe"
 or InitiatingProcessFileName contains "msedge.exe"
-or InitiatingProcessFileName contains "psexec.exe")
+)
