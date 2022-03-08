@@ -39,9 +39,6 @@ or InitiatingProcessParentFileName contains "mspub.exe"
 or InitiatingProcessParentFileName contains "visio.exe"
 or InitiatingProcessParentFileName contains "outlook.exe"
 or InitiatingProcessParentFileName contains "acrord32.exe"
-or InitiatingProcessParentFileName contains "powershell.exe"
-or InitiatingProcessParentFileName contains "cmd.exe"
-or InitiatingProcessParentFileName contains "wmiprvse.exe"
 )
 and (
 InitiatingProcessFileName contains "cmd.exe"
