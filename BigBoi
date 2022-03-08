@@ -5,6 +5,7 @@ or InitiatingProcessCommandLine contains '-ep'
 or InitiatingProcessCommandLine contains 'Exec'
 or InitiatingProcessCommandLine contains 'decode'
 or InitiatingProcessCommandLine contains 'vssadmin delete'
+or InitiatingProcessCommandLine contains 'Diskshadow' 
 or InitiatingProcessCommandLine contains 'reg save hklm'
 or InitiatingProcessCommandLine contains '-ma'
 or InitiatingProcessCommandLine contains 'CurrentVersion'
@@ -14,7 +15,7 @@ or InitiatingProcessCommandLine contains 'ticket:'
 or InitiatingProcessCommandLine contains 'sekurlsa'
 or InitiatingProcessCommandLine contains 'iex'
 or InitiatingProcessCommandLine contains 'iwr'
-or InitiatingProcessCommandLine contains 'schtasks* /create *AppData'
+or InitiatingProcessCommandLine contains '/create'
 or InitiatingProcessCommandLine contains '/c'
 or InitiatingProcessCommandLine contains 'Invoke'
 or InitiatingProcessCommandLine contains 'New-Object'
@@ -25,15 +26,25 @@ or InitiatingProcessCommandLine contains '=='
 or InitiatingProcessCommandLine contains 'psexec'
 or InitiatingProcessCommandLine contains 'msagent_'
 or InitiatingProcessCommandLine contains 'postex_'
-or InitiatingProcessCommandLine contains 'rundll32')
-and (InitiatingProcessParentFileName contains "winword.exe"
+or InitiatingProcessCommandLine contains 'rundll32'
+or InitiatingProcessCommandLine contains "reg add"
+or InitiatingProcessCommandLine contains "startw"
+or InitiatingProcessCommandLine contains "/noconfig"
+)
+and (
+InitiatingProcessParentFileName contains "winword.exe"
 or InitiatingProcessParentFileName contains "excel.exe"
 or InitiatingProcessParentFileName contains "powerpnt.exe"
 or InitiatingProcessParentFileName contains "mspub.exe"
 or InitiatingProcessParentFileName contains "visio.exe"
 or InitiatingProcessParentFileName contains "outlook.exe"
-or InitiatingProcessParentFileName contains "acrord32.exe")
-and (InitiatingProcessFileName contains "cmd.exe"
+or InitiatingProcessParentFileName contains "acrord32.exe"
+or InitiatingProcessParentFileName contains "powershell.exe"
+or InitiatingProcessParentFileName contains "cmd.exe"
+or InitiatingProcessParentFileName contains "wmiprvse.exe"
+)
+and (
+InitiatingProcessFileName contains "cmd.exe"
 or InitiatingProcessFileName contains "powershell.exe"
 or InitiatingProcessFileName contains "wscript.exe"
 or InitiatingProcessFileName contains "cscript.exe"
@@ -53,6 +64,11 @@ or InitiatingProcessFileName contains "psexec.exe"
 or InitiatingProcessFileName contains "dbgsrv.exe"
 or InitiatingProcessFileName contains "msedge.exe"
 or InitiatingProcessFileName contains "iexplore.exe"
-or InitiatingProcessFileName contains "wmiprvse.exe")
+or InitiatingProcessFileName contains "wmiprvse.exe"
+or InitiatingProcessFileName contains "pcalua.exe"
+or InitiatingProcessFileName contains "reg.exe"
+or InitiatingProcessFileName contains "notepad.exe"
+or InitiatingProcessFileName contains "csc.exe"
+)
 | project Timestamp, DeviceName, InitiatingProcessParentFileName,
- InitiatingProcessFileName, InitiatingProcessCommandLine)
+ InitiatingProcessFileName, InitiatingProcessCommandLine
